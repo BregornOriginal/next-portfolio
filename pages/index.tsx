@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
+import About from '../components/About';
 
 const Home: NextPage = () => {
 	return (
@@ -15,9 +16,13 @@ const Home: NextPage = () => {
 
 			<Header />
 
-			<section id="profile" className="snap-center">
+			<section id="profile" className="snap-start">
 				<Profile />
 			</section>
+
+			<section id='about' className='snap-center'>
+        <About />
+      </section>
 		</div>
 	);
 };
