@@ -4,7 +4,10 @@ type Props = {};
 
 const ExperienceCard = (props: Props) => {
 	return (
-		<article>
+		<article
+			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
+       w-[500px] md:w-[600px] xl:w-[900px]"
+		>
 			<motion.img
 				initial={{
 					y: -100,
@@ -27,18 +30,18 @@ const ExperienceCard = (props: Props) => {
 						src="https://camo.githubusercontent.com/da839b79b282a7658a172f07e13496fb18bcf9fa624d061def0e80f47a68ff1d/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742e706e67"
 						alt=""
 					/>
-          <img
+					<img
 						className="h-10 w-10 rounded-full"
 						src="https://camo.githubusercontent.com/da839b79b282a7658a172f07e13496fb18bcf9fa624d061def0e80f47a68ff1d/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742e706e67"
 						alt=""
 					/>
-          <img
+					<img
 						className="h-10 w-10 rounded-full"
 						src="https://camo.githubusercontent.com/da839b79b282a7658a172f07e13496fb18bcf9fa624d061def0e80f47a68ff1d/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742e706e67"
 						alt=""
 					/>
 				</div>
-				<p className='uppercase py-5 text-gray-300'>Started work...</p>
+				<p className="uppercase py-5 text-gray-300">Started work...</p>
 				<ul className="list-disc space-y-4 ml-5 text-lg">
 					<li>Summary points</li>
 					<li>Summary points</li>
