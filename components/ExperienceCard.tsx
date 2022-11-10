@@ -6,7 +6,8 @@ const ExperienceCard = (props: Props) => {
 	return (
 		<article
 			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-       w-[500px] md:w-[600px] xl:w-[900px]"
+       w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100
+       opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden"
 		>
 			<motion.img
 				initial={{
@@ -27,17 +28,17 @@ const ExperienceCard = (props: Props) => {
 				<div className="flex space-x-2 my-2">
 					<img
 						className="h-10 w-10 rounded-full"
-						src="https://camo.githubusercontent.com/da839b79b282a7658a172f07e13496fb18bcf9fa624d061def0e80f47a68ff1d/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742e706e67"
+						src="https://camo.githubusercontent.com/38b72f440cbf774558b9399b27bf659066e94b1eddc4510a9607ced1f028f6d0/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f72656163742d6e61746976652e706e67"
 						alt=""
 					/>
 					<img
 						className="h-10 w-10 rounded-full"
-						src="https://camo.githubusercontent.com/da839b79b282a7658a172f07e13496fb18bcf9fa624d061def0e80f47a68ff1d/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742e706e67"
+						src="https://camo.githubusercontent.com/38b72f440cbf774558b9399b27bf659066e94b1eddc4510a9607ced1f028f6d0/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f72656163742d6e61746976652e706e67"
 						alt=""
 					/>
 					<img
 						className="h-10 w-10 rounded-full"
-						src="https://camo.githubusercontent.com/da839b79b282a7658a172f07e13496fb18bcf9fa624d061def0e80f47a68ff1d/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f6a6176617363726970742e706e67"
+						src="https://camo.githubusercontent.com/38b72f440cbf774558b9399b27bf659066e94b1eddc4510a9607ced1f028f6d0/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f72656163742d6e61746976652e706e67"
 						alt=""
 					/>
 				</div>
