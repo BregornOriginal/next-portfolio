@@ -28,7 +28,7 @@ const Contact = (props: Inputs) => {
 
 			<div className="flex flex-col space-y-10">
 				<h4 className="text-4xl font-semibold text-center">
-					I'm skilled to work on your site.{' '}
+					I&apos;m skilled to work on your site.{' '}
 					<span className="decoration-[#F7AB0A]/50 underline">Lets talk.</span>
 				</h4>
 
