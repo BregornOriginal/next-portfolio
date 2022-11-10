@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Profile from '../components/Profile';
 import About from '../components/About';
 import Experience from '../components/Experience';
+import Skills from '../components/Skills';
 
 const Home: NextPage = () => {
 	return (
@@ -21,12 +22,17 @@ const Home: NextPage = () => {
 				<Profile />
 			</section>
 
-			<section id='about' className='snap-center'>
-        <About />
-      </section>
-      <section id='experience' className='snap-center'>
-        <Experience />
-      </section>
+			<section id="about" className="snap-center">
+				<About />
+			</section>
+
+			<section id="experience" className="snap-center">
+				<Experience />
+			</section>
+
+			<section>
+				<Skills />
+			</section>
 		</div>
 	);
 };
