@@ -31,11 +31,11 @@ export default function Profile({}: Props) {
 					height={500}
 				/>
 			</picture>
-			<div>
+			<div className='z-20'>
 				<h2 className="text-sm uppercase text-grey-500 pb-2 tracking-[15px]">
 					Full Stack Developer
 				</h2>
-				<h1 className="text-5xl lg:text-6xl font-semibold px=10">
+				<h1 className="text-5xl lg:text-5xl font-semibold px=10">
 					<span className="mr-3">{text}</span>
 					<Cursor cursorColor="orange" />
 				</h1>
