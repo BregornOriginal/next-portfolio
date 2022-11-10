@@ -9,7 +9,7 @@ import Skills from '../components/Skills';
 const Home: NextPage = () => {
 	return (
 		<div
-			className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
+			className="bg-[rgb(36,36,36)] text-white h-screen snap-y
     overflow-scroll z-0"
 		>
 			<Head>
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 				<Experience />
 			</section>
 
-			<section>
+			<section id="skills" className="snap-center">
 				<Skills />
 			</section>
 		</div>
