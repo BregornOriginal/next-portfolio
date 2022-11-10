@@ -11,10 +11,6 @@ export default function Home() {
       </Head>
 
       <Header />
-    <div className="">
-      <p className="text-2x1 text-green-600 ">
-      Portfolio
-      </p> </div>
     </div>
   )
 }
