@@ -4,11 +4,12 @@ import Header from '../components/Header';
 import Profile from '../components/Profile';
 import About from '../components/About';
 import Experience from '../components/Experience';
+import Skills from '../components/Skills';
 
 const Home: NextPage = () => {
 	return (
 		<div
-			className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory
+			className="bg-[rgb(36,36,36)] text-white h-screen snap-y
     overflow-scroll z-0"
 		>
 			<Head>
@@ -21,12 +22,17 @@ const Home: NextPage = () => {
 				<Profile />
 			</section>
 
-			<section id='about' className='snap-center'>
-        <About />
-      </section>
-      <section id='experience' className='snap-center'>
-        <Experience />
-      </section>
+			<section id="about" className="snap-center">
+				<About />
+			</section>
+
+			<section id="experience" className="snap-center">
+				<Experience />
+			</section>
+
+			<section id="skills" className="snap-center">
+				<Skills />
+			</section>
 		</div>
 	);
 };
