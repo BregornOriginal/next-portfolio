@@ -1,14 +1,14 @@
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Profile from '../components/Profile';
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
-    <div className="container">
+    <div className="bg-black text-white h-screen snap-y snap-mandatory
+    overflow-scroll z-0">
       <Head>
         <title>Julio Gagliardi&apos;s Next Portfolio</title>
-        <meta name="description" content="Full Stack Developer portfolio" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
@@ -19,3 +19,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
