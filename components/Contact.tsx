@@ -1,4 +1,5 @@
 import React from 'react';
+import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 
 type Props = {};
 
@@ -12,13 +13,46 @@ const Contact = (props: Props) => {
 
 			<div className="flex flex-col space-y-10">
 				<h4 className="text-4xl font-semibold text-center">
-					I'm skilled to work on your site.
-					<span className="decoration-[#F7AB0A]/50 underline"></span>
+					I'm skilled to work on your site.{' '}
+					<span className="decoration-[#F7AB0A]/50 underline">Lets talk.</span>
 				</h4>
 
-				<div>
-          
-        </div>
+				<div className="space-y-10">
+					<div className="flex items-center space-x-5 justify-center">
+						<PhoneIcon className="text-[#F7AB0A] h7 w-7 animate-pulse" />
+						<p className="text-2xl">+5493425272929</p>
+					</div>
+					<div className="flex items-center space-x-5 justify-center">
+						<EnvelopeIcon className="text-[#F7AB0A] h7 w-7 animate-pulse" />
+						<p className="text-2xl">juliog.1557@gmail.com</p>
+					</div>
+					<div className="flex items-center space-x-5 justify-center">
+						<MapPinIcon className="text-[#F7AB0A] h7 w-7 animate-pulse" />
+						<p className="text-2xl">1030 Developer adress</p>
+					</div>
+				</div>
+
+				<form
+					className="flex flex-col space-y-2 w-fit mx-auto"
+					action="https://formspree.io/f/mlezobkj"
+					method="POST"
+				>
+					<div className="flex space-x-2">
+						<input placeholder="Name" className="contact-input" type="text" />
+						<input placeholder="Email" className="contact-input" type="text" />
+					</div>
+
+					<input placeholder="Subject" className="contact-input" type="text" />
+
+					<textarea placeholder="Message" className="contact-input"></textarea>
+					<button
+						type="submit"
+						className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold
+          text-lg"
+					>
+						Submit
+					</button>
+				</form>
 			</div>
 		</div>
 	);
