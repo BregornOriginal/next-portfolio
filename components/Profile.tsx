@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircles from './BackgroundCircles';
@@ -31,10 +32,28 @@ export default function Profile({}: Props) {
 				/>
 			</picture>
 			<div>
-				<h1>
-					<span>{text}</span>
+				<h2 className="text-sm uppercase text-grey-500 pb-2 tracking-[15px]">
+					Full Stack Developer
+				</h2>
+				<h1 className="text-5xl lg:text-6xl font-semibold px=10">
+					<span className="mr-3">{text}</span>
 					<Cursor cursorColor="orange" />
 				</h1>
+
+				<div className="pt-5">
+					<Link href="#about">
+						<button className="profileButton">About</button>
+					</Link>
+					<Link href="#experience">
+						<button className="profileButton">Experience</button>
+					</Link>
+					<Link href="#skills">
+						<button className="profileButton">Skills</button>
+					</Link>
+					<Link href="#projects">
+						<button className="profileButton">Projects</button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	);
