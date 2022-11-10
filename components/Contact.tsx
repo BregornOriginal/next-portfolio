@@ -9,6 +9,8 @@ type Inputs = {
 	message: string;
 };
 
+type props = {};
+
 const Contact = (props: Inputs) => {
 	const { register, handleSubmit } = useForm<Inputs>();
 

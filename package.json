@@ -22,6 +22,7 @@
     "react-hook-form": "^7.39.2",
     "react-simple-typewriter": "^4.0.5",
     "react-social-icons": "^5.15.0",
+    "tailwind-scrollbar": "^2.0.1",
     "typescript": "4.8.4"
   },
   "devDependencies": {
