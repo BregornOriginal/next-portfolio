@@ -16,7 +16,7 @@ export default {
     {
       name: "profileImage",
       title: "Image",
-      type: "Image",
+      type: "image",
       options: {
         hotspot: true,
       },
