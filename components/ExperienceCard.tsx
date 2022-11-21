@@ -28,8 +28,8 @@ const ExperienceCard = ({ experience }: Props) => {
 				alt=""
 			/>
 			<div className="px-0 md:px-10">
-				<h4 className="text-4xl font-light">ezCar</h4>
-				<p className="font-bold text-2xl mt-1">Colaborative project</p>
+				<h4 className="text-4xl font-light">{experience?.company}</h4>
+				<p className="font-bold text-2xl mt-1">{experience?.jobTitle}</p>
 				<div className="flex space-x-2 my-2">
 					{experience.technologies.map(
 						(technology: { _id: React.Key | null | undefined; image: any }) => (
@@ -41,21 +41,6 @@ const ExperienceCard = ({ experience }: Props) => {
 							/>
 						)
 					)}
-					{/* <img
-						className="h-10 w-10 rounded-full"
-						src="https://camo.githubusercontent.com/38b72f440cbf774558b9399b27bf659066e94b1eddc4510a9607ced1f028f6d0/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f72656163742d6e61746976652e706e67"
-						alt=""
-					/>
-					<img
-						className="h-10 w-10 rounded-full"
-						src="https://camo.githubusercontent.com/38b72f440cbf774558b9399b27bf659066e94b1eddc4510a9607ced1f028f6d0/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f72656163742d6e61746976652e706e67"
-						alt=""
-					/>
-					<img
-						className="h-10 w-10 rounded-full"
-						src="https://camo.githubusercontent.com/38b72f440cbf774558b9399b27bf659066e94b1eddc4510a9607ced1f028f6d0/68747470733a2f2f696d672e69636f6e73382e636f6d2f636f6c6f722f34382f3030303030302f72656163742d6e61746976652e706e67"
-						alt=""
-					/> */}
 				</div>
 				<p className="uppercase py-5 text-gray-300">
 					{new Date(experience.dateStarted).toDateString()} -{' '}
@@ -64,9 +49,6 @@ const ExperienceCard = ({ experience }: Props) => {
 						: new Date(experience.dateEnded).toDateString()}
 				</p>
 				<ul className="list-disc space-y-4 ml-5 text-lg">
-					{/* {experience.points.map((point, i) => (
-						<li key={i}>{point}</li>
-					))} */}
 				</ul>
 			</div>
 		</article>
