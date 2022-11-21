@@ -33,7 +33,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 				<title>Julio Gagliardi&apos;s Next Portfolio</title>
 			</Head>
 
-			<Header />
+			<Header socials={socials} />
 
 			<section id="profile" className="snap-start">
 				<Profile />
