@@ -28,7 +28,7 @@ export default function Profile({ pageInfo }: Props) {
 			<BackgroundCircles />
 			<picture>
 				<img
-					className="relative rounded-full h-32 w-32 mx-auto object-cover"
+					className="relative rounded-full h-40 w-40 mx-auto object-cover"
 					src={urlFor(pageInfo?.profileImage).url()}
 					alt=""
 					width={500}
