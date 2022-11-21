@@ -1,15 +1,29 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Profile from '../components/Profile';
 import About from '../components/About';
-import Experience from '../components/Experience';
+import WorkExperience from '../components/WorkExperience';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import { PageInfo, Experience, Skill, Project, Social } from '../typings';
+import { fetchPageInfo } from '../utils/fetchPageInfo';
+import { fetchExperiences } from '../utils/fetchExperience';
+import { fetchProjects } from '../utils/fetchProjects';
+import { fetchSocial } from '../utils/fetchSocials';
+import { fetchSkills } from '../utils/fetchSkills';
 
-const Home: NextPage = () => {
+type Props = {
+	pageInfo: PageInfo;
+	experiences: Experience[];
+	skills: Skill[];
+	projects: Project[];
+	socials: Social[];
+};
+
+const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
 	return (
 		<div
 			className="bg-[rgb(36,36,36)] text-white h-screen snap-y
@@ -30,7 +44,7 @@ const Home: NextPage = () => {
 			</section>
 
 			<section id="experience" className="snap-center">
-				<Experience />
+				<WorkExperience />
 			</section>
 
 			<section id="skills" className="snap-start">
@@ -51,3 +65,21 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+	const pageInfo: PageInfo = await fetchPageInfo();
+	const experiences: Experience[] = await fetchExperiences();
+	const skills: Skill[] = await fetchSkills();
+	const projects: Project[] = await fetchProjects();
+	const socials: Social[] = await fetchSocial();
+
+	return {
+		props: {
+			pageInfo,
+			experiences,
+			skills,
+			projects,
+			socials,
+		},
+	};
+};
