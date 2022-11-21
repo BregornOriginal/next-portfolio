@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Project } from '../typings';
+import { urlFor } from '../sanity';
 
-type Props = {};
+type Props = {
+	projects: Project[];
+};
 
-const Projects = (props: Props) => {
-	const projects = [1, 2, 3, 4, 5];
-
+const Projects = ({ projects }: Props) => {
 	return (
 		<div
 			className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row
@@ -28,10 +30,11 @@ const Projects = (props: Props) => {
 								y: -300,
 								opacity: 0,
 							}}
+							className="max-h-96 object-contain"
 							transition={{ duration: 1.2 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							src="https://bregornoriginal.github.io/Julio-Gagliardi-Portfolio/images/ezCar/ezCar.png"
+							src={urlFor(project?.image).url()}
 							alt=""
 							width={666}
 							height={375}
@@ -40,12 +43,11 @@ const Projects = (props: Props) => {
 							<h4 className="text-4xl font-semibold text-center">
 								<span className="underline decoration-[#F7AB0A]/50">
 									Project {i + 1} of {projects.length}:
-								</span>
+								</span>{" "}
+								{project?.title}
 							</h4>
 							<p className="text-lg text-center md:text-left">
-								This application allows users to book a car present in our database. The user can
-								set the reservation date and final date for a selected car. If the user is an
-								administrator they can upload a car and delete it from our database.
+								{project?.summary}
 							</p>
 						</div>
 					</div>
