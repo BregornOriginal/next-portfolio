@@ -23,7 +23,7 @@ type Props = {
 	socials: Social[];
 };
 
-const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 	return (
 		<div
 			className="bg-[rgb(36,36,36)] text-white h-screen snap-y
@@ -81,5 +81,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 			projects,
 			socials,
 		},
+		// Next.js will attempt to re-generate the page:
+		// - When a request comes in
+		// - At most once every 10 seconds
+		revalidate: 10,
 	};
 };
