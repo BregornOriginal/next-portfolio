@@ -59,6 +59,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 			<section id="contact" className="snap-start">
 				<Contact name={''} email={''} subject={''} message={''} />
 			</section>
+			
 			<Link href="#profile">
 				<Footer />
 			</Link>

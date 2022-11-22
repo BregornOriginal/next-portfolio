@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
+import Link from 'next/link';
 
 type Props = {
 	projects: Project[];
@@ -30,20 +31,23 @@ const Projects = ({ projects }: Props) => {
           items-center justify-center p-20 md:p-44 h-screen"
 						key={i}
 					>
-						<motion.img
-							initial={{
-								y: -300,
-								opacity: 0,
-							}}
-							className="max-h-96 object-contain"
-							transition={{ duration: 1.2 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							src={urlFor(project?.image).url()}
-							alt=""
-							width={666}
-							height={375}
-						/>
+						<a href={project?.linkToBuild}
+						target='_blank'>
+							<motion.img
+								initial={{
+									y: -300,
+									opacity: 0,
+								}}
+								className="max-h-96 object-contain"
+								transition={{ duration: 1.2 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								src={urlFor(project?.image).url()}
+								alt=""
+								width={666}
+								height={375}
+							/>
+						</a>
 						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
 							<h4 className="text-4xl font-semibold text-center">
 								<span className="underline decoration-[#F7AB0A]/50">

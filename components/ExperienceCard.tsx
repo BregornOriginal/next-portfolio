@@ -35,7 +35,7 @@ const ExperienceCard = ({ experience }: Props) => {
 						(technology: { _id: React.Key | null | undefined; image: any }) => (
 							<img
 								key={technology._id}
-								className="h-10 w-10 rounded-full"
+								className="h-10 w-10 rounded-md"
 								src={urlFor(technology.image).url()}
 								alt=""
 							/>
