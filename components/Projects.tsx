@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
-import Link from 'next/link';
 
 type Props = {
 	projects: Project[];
@@ -31,8 +30,7 @@ const Projects = ({ projects }: Props) => {
           items-center justify-center p-20 md:p-44 h-screen"
 						key={i}
 					>
-						<a href={project?.linkToBuild}
-						target='_blank'>
+						<a href={project?.linkToBuild} target="_blank">
 							<motion.img
 								initial={{
 									y: -300,
