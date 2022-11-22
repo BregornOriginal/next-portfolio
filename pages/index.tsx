@@ -14,6 +14,7 @@ import { fetchExperiences } from '../utils/fetchExperience';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
 import { fetchSkills } from '../utils/fetchSkills';
+import Link from 'next/link';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -36,11 +37,11 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 			<Header socials={socials} />
 
 			<section id="profile" className="snap-start">
-				<Profile pageInfo={pageInfo}/>
+				<Profile pageInfo={pageInfo} />
 			</section>
 
 			<section id="about" className="snap-center">
-				<About pageInfo={pageInfo}/>
+				<About pageInfo={pageInfo} />
 			</section>
 
 			<section id="experience" className="snap-center">
@@ -58,8 +59,9 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 			<section id="contact" className="snap-start">
 				<Contact name={''} email={''} subject={''} message={''} />
 			</section>
-
-			<Footer />
+			<Link href="#profile">
+				<Footer />
+			</Link>
 		</div>
 	);
 };
