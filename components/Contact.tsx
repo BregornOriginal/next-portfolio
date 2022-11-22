@@ -47,7 +47,12 @@ const Contact = (props: Inputs) => {
 					</div>
 				</div>
 
-				<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
+				<form
+					id="form"
+					action="https://formspree.io/f/mlezobkj"
+					method="POST"
+					className="flex flex-col space-y-2 w-fit mx-auto"
+				>
 					<div className="flex space-x-2">
 						<input {...register('name')} placeholder="Name" className="contact-input" type="text" />
 						<input
