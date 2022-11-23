@@ -16,7 +16,7 @@ const Projects = ({ projects }: Props) => {
 			className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row
     max-w-full justify-evenly mx-auto items-center z-0"
 		>
-			<h3 className="absolute top-24 uppercase tracking-[1.5em] text-gray-500 text-2x1">
+			<h3 className="absolute top-20 sm:top-24 uppercase tracking-[1.5em] text-gray-500 text-2x1">
 				Projects
 			</h3>
 
@@ -36,7 +36,7 @@ const Projects = ({ projects }: Props) => {
 									y: -300,
 									opacity: 0,
 								}}
-								className="max-h-96 object-contain"
+								className="max-h-80 object-contain"
 								transition={{ duration: 1.2 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
@@ -47,7 +47,7 @@ const Projects = ({ projects }: Props) => {
 							/>
 						</a>
 						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
-							<h4 className="text-4xl font-semibold text-center">
+							<h4 className="text-xl font-semibold text-center">
 								<span className="underline decoration-[#F7AB0A]/50">
 									Project {i + 1} of {projects.length}:
 								</span>{' '}
@@ -63,7 +63,7 @@ const Projects = ({ projects }: Props) => {
 									/>
 								))}
 							</div>
-							<p className="text-lg text-center md:text-left">{project?.summary}</p>
+							<p className="text-sm text-center md:text-left max-h-28">{project?.summary}</p>
 						</div>
 					</div>
 				))}

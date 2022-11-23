@@ -14,7 +14,7 @@ export default function Profile({ pageInfo }: Props) {
 		words: [
 			`Hi, My name is ${pageInfo?.name}`,
 			"A gamer and PC's enthusiast",
-			'{ Love write code! }',
+			'[{ Love to write code! }]',
 		],
 		loop: true,
 		delaySpeed: 2000,
@@ -36,7 +36,7 @@ export default function Profile({ pageInfo }: Props) {
 				/>
 			</picture>
 			<div className="z-20">
-				<h2 className="text-sm uppercase text-grey-500 pb-2 tracking-[15px]">
+				<h2 className="text-sm uppercase text-grey-500 pb-2 pt-12 tracking-[15px]">
 					{pageInfo?.role}
 				</h2>
 				<h1 className="text-5xl lg:text-5xl font-semibold px=10">
