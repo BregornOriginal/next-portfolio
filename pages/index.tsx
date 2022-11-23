@@ -14,6 +14,7 @@ import { fetchExperiences } from '../utils/fetchExperience';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
 import { fetchSkills } from '../utils/fetchSkills';
+import Link from 'next/link';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -33,33 +34,35 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 				<title>Julio Gagliardi&apos;s Next Portfolio</title>
 			</Head>
 
-			<Header />
+			<Header socials={socials} />
 
 			<section id="profile" className="snap-start">
-				<Profile />
+				<Profile pageInfo={pageInfo} />
 			</section>
 
 			<section id="about" className="snap-center">
-				<About />
+				<About pageInfo={pageInfo} />
 			</section>
 
 			<section id="experience" className="snap-center">
-				<WorkExperience />
+				<WorkExperience experiences={experiences} />
 			</section>
 
 			<section id="skills" className="snap-start">
-				<Skills />
+				<Skills skills={skills} />
 			</section>
 
 			<section id="projects" className="snap-start">
-				<Projects />
+				<Projects projects={projects} />
 			</section>
 
 			<section id="contact" className="snap-start">
 				<Contact name={''} email={''} subject={''} message={''} />
 			</section>
-
-			<Footer />
+			
+			<Link href="#profile">
+				<Footer />
+			</Link>
 		</div>
 	);
 };
