@@ -5,7 +5,7 @@ type Props = {};
 const Footer = (props: Props) => {
 	return (
 		<footer className="sticky bottom-5 w-full cursor-pointer">
-			<div className="flex items-center justify-center">
+			<div className="flex flex-end items-center pr-6 justify-end">
 				<img
 					className="h-10 w-10 roudned-full filter grayscale hover:grayscale-0
     cursor-pointer rounded-md"
