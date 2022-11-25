@@ -9,6 +9,12 @@ export default {
       type: "string",
     },
     {
+      name: "phrases",
+      title: "Phrases",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
       name: "role",
       title: "Role",
       type: "string",

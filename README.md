@@ -1,4 +1,3 @@
-
 # Next-portfolio
 
 > This portfolio was created with Next.js. The goal of this is to show a simple first screen of my software development projects and to have the opportunity to be in contact with whatever want to talk about coding or start some work

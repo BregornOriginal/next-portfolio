@@ -11,8 +11,8 @@ const ExperienceCard = ({ experience }: Props) => {
 	return (
 		<article
 			className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-       w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100
-       opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden"
+       w-[350px] sm:w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100
+       opacity-80 cursor-pointer transition-opacity duration-200 overflow-hidden"
 		>
 			<motion.img
 				initial={{
@@ -22,20 +22,20 @@ const ExperienceCard = ({ experience }: Props) => {
 				transition={{ duration: 1.2 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover
+				className="w-20 h-20 sm:w-32 sm:h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover
     object-center"
 				src={urlFor(experience?.companyImage).url()}
-				alt=""
+				alt="This is an image of the company"
 			/>
 			<div className="px-0 md:px-10">
-				<h4 className="text-4xl font-light">{experience?.company}</h4>
-				<p className="font-bold text-2xl mt-1">{experience?.jobTitle}</p>
+				<h4 className="text-2xl sm:text-4xl font-light">{experience?.company}</h4>
+				<p className="font-bold sm:text-2xl text-xl mt-1">{experience?.jobTitle}</p>
 				<div className="flex space-x-2 my-2">
 					{experience.technologies.map(
 						(technology: { _id: React.Key | null | undefined; image: any }) => (
 							<img
 								key={technology._id}
-								className="h-10 w-10 rounded-md"
+								className="h-6 w-6 max-w-xs sm:h-10 sm:w-10 rounded-md"
 								src={urlFor(technology.image).url()}
 								alt=""
 							/>
@@ -43,12 +43,22 @@ const ExperienceCard = ({ experience }: Props) => {
 					)}
 				</div>
 				<p className="uppercase py-5 text-gray-300">
-					{new Date(experience.dateStarted).toDateString()} -{' '}
+					{new Date(experience.dateStarted).toLocaleDateString('en-us', {
+						year: 'numeric',
+						month: 'short',
+					})}{' '}
+					-{' '}
 					{experience.isCurrentlyWorkingHere
 						? 'Present'
-						: new Date(experience.dateEnded).toDateString()}
+						: new Date(experience.dateEnded).toLocaleDateString('en-us', {
+								year: 'numeric',
+								month: 'short',
+						  })}
 				</p>
-				<ul className="list-disc space-y-4 ml-5 text-lg">
+				<ul className="list-disc space-y-4 ml-5 text-md max-h-32 overflow-y-scroll pr-5 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]/80">
+					{experience?.points?.map((point, index) => (
+						<li key={index}>◉ {point}</li>
+					))}
 				</ul>
 			</div>
 		</article>

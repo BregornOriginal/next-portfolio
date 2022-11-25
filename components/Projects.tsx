@@ -49,7 +49,7 @@ const Projects = ({ projects }: Props) => {
 						</Link>
 						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
 							<h4 className="text-xl font-semibold text-center">
-								<span className="underline decoration-[#F7AB0A]/50">
+								<span>
 									Project {i + 1} of {projects.length}:
 								</span>{' '}
 								{project?.title}
@@ -57,14 +57,16 @@ const Projects = ({ projects }: Props) => {
 							<div className="flex items-center space-x-2 justify-center">
 								{project?.technologies.map((technology) => (
 									<img
-										className="h-10 w-10"
+										className="h-8 w-8 sm:h-10 sm:w-10"
 										key={technology._id}
 										src={urlFor(technology.image).url()}
 										alt="This is an icon of a technology"
 									/>
 								))}
 							</div>
-							<p className="text-sm text-center md:text-left max-h-28">{project?.summary}</p>
+							<p className="text-sm sm:text-xl text-center md:text-left max-h-28 overflow-y-scroll pr-5 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]/80">
+								{project?.summary}
+							</p>
 						</div>
 					</div>
 				))}
