@@ -30,14 +30,14 @@ const About = ({ pageInfo }: Props) => {
 				transition={{
 					duration: 1.2,
 				}}
-				className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover 
+				className="mt-20 md:mb-0 flex-shrink-0 w-50 h-46 rounded-full object-cover 
           md:rounded-lg md:w-70 md:h-100 xl:w-[1000px] xl:h-[600px]"
 			/>
 			<div className="space-y-10 px-0 md:px-10">
 				<h4 className="text-4xl font-semibold">
-					Here is a <span className="underline decoration-[#ad8447]">little</span> background
+					Here is a <span>little</span> background
 				</h4>
-				<p className="text-base">{pageInfo.backgroundInformation}</p>
+				<p className="text-sm sm:text-base">{pageInfo.backgroundInformation}</p>
 			</div>
 		</motion.div>
 	);
