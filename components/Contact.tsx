@@ -56,13 +56,41 @@ const Contact = (props: Inputs) => {
 					className="flex flex-col space-y-2 max-w-full mx-auto"
 				>
 					<div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 max-w-full mx-auto">
-						<input placeholder="Name" className="contact-input" type="text" />
-						<input placeholder="Email" className="contact-input" type="email" />
+						<input
+							id="full-name"
+							maxLength={30}
+							name="full-name"
+							placeholder="Full-Name"
+							className="contact-input"
+							type="text"
+							required
+						/>
+						<input
+							id="email-adress"
+							name="email-adress"
+							placeholder="Email adress"
+							className="contact-input"
+							type="email"
+							required
+						/>
 					</div>
 
-					<input placeholder="Subject" className="contact-input" type="text" />
+					<input
+						id="subject"
+						name="subjet"
+						placeholder="Subject"
+						className="contact-input"
+						type="text"
+						required
+					/>
 
-					<textarea placeholder="Message" className="contact-input"></textarea>
+					<textarea
+						id="message"
+						maxLength={500}
+						placeholder="Message"
+						className="contact-input"
+						required
+					></textarea>
 					<button
 						type="submit"
 						className="bg-[#F7AB0A] py-2 px-4 sm:py-5 sm:px-10 rounded-md text-black font-bold
