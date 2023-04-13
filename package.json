@@ -20,6 +20,7 @@
     "framer-motion": "^7.6.5",
     "next": "13.0.2",
     "next-sanity": "^2.0.1",
+    "npm": "^9.6.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.39.2",
