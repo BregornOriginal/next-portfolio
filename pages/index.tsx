@@ -8,6 +8,7 @@ import WorkExperience from '../components/WorkExperience';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import AIChatWidget from '../components/AIChatWidget';
 import { PageInfo, Experience, Skill, Project, Social } from '../typings';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchExperiences } from '../utils/fetchExperience';
@@ -63,6 +64,13 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 			<Link href="#profile">
 				<Footer />
 			</Link>
+
+			<AIChatWidget
+				pageInfo={pageInfo}
+				experiences={experiences}
+				skills={skills}
+				projects={projects}
+			/>
 		</div>
 	);
 };
