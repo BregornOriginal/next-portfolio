@@ -42,7 +42,14 @@ To get a local copy up and running follow these simple example steps.
 - npm install
 ### Usage
 
-- npm run dev    
+- npm run dev
+
+### Easy to update
+
+- To start the backend, go to the project folder, cd /sanity, and run `sanity start`
+- Open Sanity in the localhost and update the data you want in the portfolio
+- To deploy the new information in the backend, run `sanity deploy`
+- If necessary, log in to the account with the necessary credentials
 
 ## Authors
 
