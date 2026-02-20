@@ -3,7 +3,7 @@
 > This portfolio was created with Next.js. The goal of this is to show a simple first screen of my software development projects and to have the opportunity to be in contact with whatever want to talk about coding or start some work
 ## Live Demo
 
-[Vercel](https://julio-gagliardi-portfolio-bregornoriginal.vercel.app/)
+[Vercel](https://julio-gagliardi-portfolio.vercel.app/)
 
 ## Built With
 
