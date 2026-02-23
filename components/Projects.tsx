@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
@@ -9,6 +9,41 @@ type Props = {
 };
 
 const Projects = ({ projects }: Props) => {
+	const scrollContainerRef = useRef<HTMLDivElement>(null);
+	const [canScrollLeft, setCanScrollLeft] = useState(false);
+	const [canScrollRight, setCanScrollRight] = useState(true);
+	const [isHovering, setIsHovering] = useState(false);
+
+	const checkScroll = () => {
+		if (scrollContainerRef.current) {
+			const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+			setCanScrollLeft(scrollLeft > 0);
+			setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+		}
+	};
+
+	useEffect(() => {
+		checkScroll();
+		const container = scrollContainerRef.current;
+		container?.addEventListener('scroll', checkScroll);
+		window.addEventListener('resize', checkScroll);
+
+		return () => {
+			container?.removeEventListener('scroll', checkScroll);
+			window.removeEventListener('resize', checkScroll);
+		};
+	}, []);
+
+	const scroll = (direction: 'left' | 'right') => {
+		if (scrollContainerRef.current) {
+			const scrollAmount = window.innerWidth;
+			scrollContainerRef.current.scrollBy({
+				left: direction === 'left' ? -scrollAmount : scrollAmount,
+				behavior: 'smooth',
+			});
+		}
+	};
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -16,12 +51,36 @@ const Projects = ({ projects }: Props) => {
 			transition={{ duration: 1.5 }}
 			className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row
     max-w-full justify-evenly mx-auto items-center z-0"
+			onMouseEnter={() => setIsHovering(true)}
+			onMouseLeave={() => setIsHovering(false)}
 		>
 			<h3 className="absolute top-20 sm:top-24 uppercase tracking-[1.5em] text-gray-500 text-2x1">
 				Projects
 			</h3>
 
+			{/* Left Arrow */}
+			{canScrollLeft && isHovering && (
+				<button
+					onClick={() => scroll('left')}
+					className="absolute left-2 sm:left-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
+					aria-label="Scroll left"
+				>
+					<svg
+						className="w-5 h-5 sm:w-6 sm:h-6 text-black"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+					>
+						<path
+							fillRule="evenodd"
+							d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+							clipRule="evenodd"
+						/>
+					</svg>
+				</button>
+			)}
+
 			<div
+				ref={scrollContainerRef}
 				className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
       z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
 			>
@@ -71,6 +130,27 @@ const Projects = ({ projects }: Props) => {
 					</div>
 				))}
 			</div>
+
+			{/* Right Arrow */}
+			{canScrollRight && isHovering && (
+				<button
+					onClick={() => scroll('right')}
+					className="absolute right-2 sm:right-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
+					aria-label="Scroll right"
+				>
+					<svg
+						className="w-5 h-5 sm:w-6 sm:h-6 text-black"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+					>
+						<path
+							fillRule="evenodd"
+							d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+							clipRule="evenodd"
+						/>
+					</svg>
+				</button>
+			)}
 
 			<div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"></div>
 		</motion.div>
