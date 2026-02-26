@@ -82,6 +82,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
     <AnimatePresence>
       {/* Backdrop */}
       <motion.div
+        key="backdrop"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -91,6 +92,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
         aria-hidden
       />
       <motion.div
+        key="panel"
         initial={{ x: '100%' }}
         animate={{ x: 0 }}
         exit={{ x: '100%' }}

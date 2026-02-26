@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { urlFor } from '../sanity';
 import { Experience } from '../typings';
@@ -33,11 +34,13 @@ const ExperienceCard = ({ experience }: Props) => {
 				<div className="flex space-x-2 my-2">
 					{experience.technologies.map(
 						(technology: { _id: React.Key | null | undefined; image: any }) => (
-							<img
+							<Image
 								key={technology._id}
 								className="h-6 w-6 max-w-xs sm:h-10 sm:w-10 rounded-md"
 								src={urlFor(technology.image).url()}
 								alt=""
+								width={40}
+								height={40}
 							/>
 						)
 					)}
