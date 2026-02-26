@@ -14,3 +14,23 @@
       focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40;
   }
 }
+
+/* Header hover styles */
+@layer components {
+  .headerButton {
+    @apply inline-flex items-center justify-center p-1 rounded-full transition-transform duration-150;
+  }
+
+  .headerButton:hover {
+    transform: translateY(-3px) scale(1.06);
+    box-shadow: 0 6px 18px rgba(247, 171, 10, 0.12);
+  }
+
+  .headerTextButton {
+    @apply uppercase hidden md:inline-flex text-sm text-gray-400 transition-colors duration-150;
+  }
+
+  .headerTextButton:hover {
+    color: #F7AB0A;
+  }
+}
