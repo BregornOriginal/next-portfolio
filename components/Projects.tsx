@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
@@ -115,11 +116,13 @@ const Projects = ({ projects }: Props) => {
 							</h4>
 							<div className="flex items-center space-x-2 justify-center">
 								{project?.technologies.map((technology) => (
-									<img
+									<Image
 										className="h-8 w-8 sm:h-10 sm:w-10"
 										key={technology._id}
 										src={urlFor(technology.image).url()}
 										alt="This is an icon of a technology"
+										width={40}
+										height={40}
 									/>
 								))}
 							</div>
