@@ -9,7 +9,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import AIChatWidget from '../components/AIChatWidget';
-import { PageInfo, Experience, Skill, Project, Social } from '../typings';
+import type { PageInfo, Experience, Skill, Project, Social } from '../typings';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchExperiences } from '../utils/fetchExperience';
 import { fetchProjects } from '../utils/fetchProjects';
