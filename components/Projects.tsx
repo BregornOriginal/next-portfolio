@@ -64,7 +64,7 @@ const Projects = ({ projects }: Props) => {
 				<button
 					type="button"
 					onClick={() => scroll('left')}
-					className="absolute left-2 sm:left-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
+					className="absolute left-2 sm:left-5 z-50 bg-[#f7ab0a]/80 hover:bg-[#f7ab0a] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
 					aria-label="Scroll left"
 				>
 					<svg
@@ -84,7 +84,7 @@ const Projects = ({ projects }: Props) => {
 			<div
 				ref={scrollContainerRef}
 				className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory
-      z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
+      z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80"
 			>
 				{projects?.map((project, i) => (
 					<div
@@ -140,7 +140,7 @@ const Projects = ({ projects }: Props) => {
 				<button
 					type="button"
 					onClick={() => scroll('right')}
-					className="absolute right-2 sm:right-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
+					className="absolute right-2 sm:right-5 z-50 bg-[#f7ab0a]/80 hover:bg-[#f7ab0a] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
 					aria-label="Scroll right"
 				>
 					<svg
@@ -157,7 +157,7 @@ const Projects = ({ projects }: Props) => {
 				</button>
 			)}
 
-			<div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"></div>
+			<div className="w-full absolute top-[30%] bg-[#f7ab0a]/10 left-0 h-[500px] -skew-y-12"></div>
 		</motion.div>
 	);
 };

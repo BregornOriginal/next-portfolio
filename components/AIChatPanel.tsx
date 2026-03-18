@@ -133,7 +133,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-track-[#292929] scrollbar-thumb-[#F7AB0A]/60">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-track-[#292929] scrollbar-thumb-[#f7ab0a]/60">
           {messages.length === 0 ? (
             <>
               <p className="text-base font-medium text-gray-200">
@@ -146,7 +146,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
                     type="button"
                     onClick={() => handleSuggestedClick(label)}
                     disabled={loading}
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#292929] hover:bg-[#333] border border-[#333] hover:border-[#F7AB0A]/40 text-left transition-colors disabled:opacity-50"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#292929] hover:bg-[#333] border border-[#333] hover:border-[#f7ab0a]/40 text-left transition-colors disabled:opacity-50"
                   >
                     <span>{icon}</span>
                     <span className="text-sm">{label}</span>
@@ -164,7 +164,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
                   <div
                     className={`max-w-[85%] rounded-lg px-4 py-2 ${
                       msg.role === 'user'
-                        ? 'bg-[#F7AB0A]/20 text-white border border-[#F7AB0A]/40'
+                        ? 'bg-[#f7ab0a]/20 text-white border border-[#f7ab0a]/40'
                         : 'bg-[#292929] text-gray-200 border border-[#333]'
                     }`}
                   >
@@ -191,7 +191,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
                           key={label}
                           type="button"
                           onClick={() => handleSuggestedClick(label)}
-                          className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#292929] hover:bg-[#333] border border-[#333] hover:border-[#F7AB0A]/40 text-xs transition-colors"
+                          className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#292929] hover:bg-[#333] border border-[#333] hover:border-[#f7ab0a]/40 text-xs transition-colors"
                         >
                           <span>{icon}</span>
                           <span>{label}</span>
@@ -203,7 +203,7 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
                       <button
                         type="button"
                         onClick={() => setUsedPrompts([])}
-                        className="px-3 py-2 rounded-full bg-[#292929] hover:bg-[#333] border border-[#333] hover:border-[#F7AB0A]/40 text-xs text-gray-300 transition-colors"
+                        className="px-3 py-2 rounded-full bg-[#292929] hover:bg-[#333] border border-[#333] hover:border-[#f7ab0a]/40 text-xs text-gray-300 transition-colors"
                       >
                         See questions again
                       </button>
@@ -224,12 +224,12 @@ export default function AIChatPanel({ isOpen, onClose, name, systemContext }: Pr
               onChange={(e) => setInput(e.target.value)}
               placeholder="Message the AI"
               disabled={loading}
-              className="flex-1 rounded-lg bg-[#292929] border border-[#333] px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F7AB0A]/40"
+              className="flex-1 rounded-lg bg-[#292929] border border-[#333] px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#f7ab0a]/40"
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="rounded-lg bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] px-4 py-3 text-sm font-medium text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="rounded-lg bg-[#f7ab0a]/80 hover:bg-[#f7ab0a] px-4 py-3 text-sm font-medium text-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Send
             </button>

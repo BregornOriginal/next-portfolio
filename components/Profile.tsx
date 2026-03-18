@@ -45,7 +45,7 @@ export default function Profile({ pageInfo }: Props) {
 					}}
 					className="absolute inset-0 mx-auto flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 				>
-					<span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#F7AB0A] text-black shadow-lg">
+					<span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f7ab0a] text-black shadow-lg">
 						<svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path
 								strokeLinecap="round"

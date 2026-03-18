@@ -61,7 +61,7 @@ const WorkExperience = ({ experiences }: Props) => {
 					<button
 						type="button"
 						onClick={() => scroll('left')}
-						className="absolute left-2 sm:left-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
+						className="absolute left-2 sm:left-5 z-50 bg-[#f7ab0a]/80 hover:bg-[#f7ab0a] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
 						aria-label="Scroll left"
 					>
 						<svg
@@ -81,7 +81,7 @@ const WorkExperience = ({ experiences }: Props) => {
 				<div
 					ref={scrollContainerRef}
 					className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory
-				scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
+				scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80"
 				>
 					{experiences?.sort((a, b) => (b.dateStarted > a.dateStarted ? 1 : -1)).map((experience) => (
 						<ExperienceCard key={experience._id} experience={experience} />
@@ -93,7 +93,7 @@ const WorkExperience = ({ experiences }: Props) => {
 					<button
 						type="button"
 						onClick={() => scroll('right')}
-						className="absolute right-2 sm:right-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
+						className="absolute right-2 sm:right-5 z-50 bg-[#f7ab0a]/80 hover:bg-[#f7ab0a] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
 						aria-label="Scroll right"
 					>
 						<svg
