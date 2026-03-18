@@ -59,6 +59,7 @@ const WorkExperience = ({ experiences }: Props) => {
 				{/* Left Arrow */}
 				{canScrollLeft && isHovering && (
 					<button
+						type="button"
 						onClick={() => scroll('left')}
 						className="absolute left-2 sm:left-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
 						aria-label="Scroll left"
@@ -90,6 +91,7 @@ const WorkExperience = ({ experiences }: Props) => {
 				{/* Right Arrow */}
 				{canScrollRight && isHovering && (
 					<button
+						type="button"
 						onClick={() => scroll('right')}
 						className="absolute right-2 sm:right-5 z-50 bg-[#F7AB0A]/80 hover:bg-[#F7AB0A] transition-all duration-200 rounded-full p-2 sm:p-3 shadow-lg"
 						aria-label="Scroll right"
