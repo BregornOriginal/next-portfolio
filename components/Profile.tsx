@@ -68,16 +68,16 @@ export default function Profile({ pageInfo }: Props) {
 
 				<div className="pt-5">
 					<Link href="#about">
-						<button className="profileButton">About</button>
+						<button type="button" className="profileButton">About</button>
 					</Link>
 					<Link href="#experience">
-						<button className="profileButton">Experience</button>
+						<button type="button" className="profileButton">Experience</button>
 					</Link>
 					<Link href="#skills">
-						<button className="profileButton">Skills</button>
+						<button type="button" className="profileButton">Skills</button>
 					</Link>
 					<Link href="#projects">
-						<button className="profileButton">Projects</button>
+						<button type="button" className="profileButton">Projects</button>
 					</Link>
 				</div>
 			</div>
