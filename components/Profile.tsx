@@ -66,18 +66,18 @@ export default function Profile({ pageInfo }: Props) {
 					<Cursor cursorColor="orange" />
 				</h1>
 
-				<div className="pt-5">
-					<Link href="#about">
-						<button type="button" className="profileButton">About</button>
+				<div className="pt-5 flex flex-wrap justify-center gap-4">
+					<Link href="#about" className="profileButton">
+						About
 					</Link>
-					<Link href="#experience">
-						<button type="button" className="profileButton">Experience</button>
+					<Link href="#experience" className="profileButton">
+						Experience
 					</Link>
-					<Link href="#skills">
-						<button type="button" className="profileButton">Skills</button>
+					<Link href="#skills" className="profileButton">
+						Skills
 					</Link>
-					<Link href="#projects">
-						<button type="button" className="profileButton">Projects</button>
+					<Link href="#projects" className="profileButton">
+						Projects
 					</Link>
 				</div>
 			</div>

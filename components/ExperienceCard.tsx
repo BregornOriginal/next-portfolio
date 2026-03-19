@@ -45,17 +45,19 @@ const ExperienceCard = ({ experience }: Props) => {
 						)
 					)}
 				</div>
-				<p className="uppercase py-5 text-gray-300">
-					{new Date(experience.dateStarted).toLocaleDateString('en-us', {
+				<p className="uppercase py-5 text-gray-300" suppressHydrationWarning>
+					{new Date(experience.dateStarted).toLocaleDateString('en-US', {
 						year: 'numeric',
 						month: 'short',
+						timeZone: 'UTC',
 					})}{' '}
 					-{' '}
 					{experience.isCurrentlyWorkingHere
 						? 'Present'
-						: new Date(experience.dateEnded).toLocaleDateString('en-us', {
+						: new Date(experience.dateEnded).toLocaleDateString('en-US', {
 								year: 'numeric',
 								month: 'short',
+								timeZone: 'UTC',
 						  })}
 				</p>
 				<ul className="list-disc space-y-4 ml-5 text-md max-h-32 overflow-y-scroll pr-5 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#f7ab0a]/80">
