@@ -15,7 +15,6 @@ import { fetchExperiences } from '../utils/fetchExperience';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
 import { fetchSkills } from '../utils/fetchSkills';
-import Link from 'next/link';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -61,9 +60,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 				<Contact name={''} email={''} subject={''} message={''} />
 			</section>
 			
-			<Link href="#profile">
-				<Footer />
-			</Link>
+			<Footer />
 
 			<AIChatWidget
 				pageInfo={pageInfo}
