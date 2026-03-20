@@ -15,7 +15,6 @@ import { fetchExperiences } from '../utils/fetchExperience';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
 import { fetchSkills } from '../utils/fetchSkills';
-import Link from 'next/link';
 
 type Props = {
 	pageInfo: PageInfo;
@@ -29,7 +28,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 	return (
 		<div
 			className="bg-[rgb(36,36,36)] text-white h-screen snap-y
-    overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
+    overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80"
 		>
 			<Head>
 				<title>Julio Gagliardi&apos;s Next Portfolio</title>
@@ -61,9 +60,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 				<Contact name={''} email={''} subject={''} message={''} />
 			</section>
 			
-			<Link href="#profile">
-				<Footer />
-			</Link>
+			<Footer />
 
 			<AIChatWidget
 				pageInfo={pageInfo}

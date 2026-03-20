@@ -30,21 +30,21 @@ const Contact = (props: Inputs) => {
 						className="flex items-start space-x-5 justify-start
 					sm:items-center sm:justify-center"
 					>
-						<PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+						<PhoneIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
 						<p className="text-md sm:text-4xl">+5493425272929</p>
 					</div>
 					<div
 						className="flex items-start space-x-5 justify-start
 					sm:items-center sm:justify-center"
 					>
-						<EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+						<EnvelopeIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
 						<p className="text-md sm:text-4xl">juliog.1557@gmail.com</p>
 					</div>
 					<div
 						className="flex items-start space-x-5 justify-start
 					sm:items-center sm:justify-center"
 					>
-						<MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
+						<MapPinIcon className="text-[#f7ab0a] h-7 w-7 animate-pulse" />
 						<p className="text-md sm:text-4xl">Argentina, Santa Fe - C.P. 3000</p>
 					</div>
 				</div>
@@ -93,7 +93,7 @@ const Contact = (props: Inputs) => {
 					></textarea>
 					<button
 						type="submit"
-						className="bg-[#F7AB0A] py-2 px-4 sm:py-5 sm:px-10 rounded-md text-black font-bold
+						className="bg-[#f7ab0a] py-2 px-4 sm:py-5 sm:px-10 rounded-md text-black font-bold
           text-lg"
 					>
 						Submit

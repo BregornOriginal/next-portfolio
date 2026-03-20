@@ -14,7 +14,7 @@ export default function ChatTrigger({ onClick, isOpen }: Props) {
       type="button"
       onClick={onClick}
       aria-label={isOpen ? 'Close AI chat' : 'Open AI chat'}
-      className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#F7AB0A] text-black shadow-lg hover:bg-[#F7AB0A]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#F7AB0A]/50"
+      className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#f7ab0a] text-black shadow-lg hover:bg-[#f7ab0a]/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#f7ab0a]/50"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >

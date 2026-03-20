@@ -2,6 +2,12 @@
   "name": "next-portfolio",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ],
   "engines": {
     "node": "24.x"
   },
@@ -9,7 +15,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:css": "stylelint \"styles/**/*.css\" \"styles/**/*.scss\""
   },
   "dependencies": {
     "@heroicons/react": "^2.0.13",

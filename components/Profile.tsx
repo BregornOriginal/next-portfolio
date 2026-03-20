@@ -45,7 +45,7 @@ export default function Profile({ pageInfo }: Props) {
 					}}
 					className="absolute inset-0 mx-auto flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
 				>
-					<span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#F7AB0A] text-black shadow-lg">
+					<span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f7ab0a] text-black shadow-lg">
 						<svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path
 								strokeLinecap="round"
@@ -66,18 +66,18 @@ export default function Profile({ pageInfo }: Props) {
 					<Cursor cursorColor="orange" />
 				</h1>
 
-				<div className="pt-5">
-					<Link href="#about">
-						<button className="profileButton">About</button>
+				<div className="pt-5 flex flex-wrap justify-center gap-4">
+					<Link href="#about" className="profileButton">
+						About
 					</Link>
-					<Link href="#experience">
-						<button className="profileButton">Experience</button>
+					<Link href="#experience" className="profileButton">
+						Experience
 					</Link>
-					<Link href="#skills">
-						<button className="profileButton">Skills</button>
+					<Link href="#skills" className="profileButton">
+						Skills
 					</Link>
-					<Link href="#projects">
-						<button className="profileButton">Projects</button>
+					<Link href="#projects" className="profileButton">
+						Projects
 					</Link>
 				</div>
 			</div>

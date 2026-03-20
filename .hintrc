@@ -1,0 +1,24 @@
+{
+  "connector": {
+    "name": "local",
+    "options": {
+      "pattern": ["**/*.html", "**/*.css", "!.git/**", "!node_modules/**", "!.next/**", "!sanity-portfolio/**"]
+    }
+  },
+  "extends": ["development"],
+  "formatters": ["stylish"],
+  "hints": {
+    "button-type": "error",
+    "disown-opener": "error",
+    "html-checker": "error",
+    "meta-charset-utf-8": "error",
+    "meta-viewport": "error",
+    "no-inline-styles": "error",
+    "compat-api/css": ["error", { "ignore": ["scrollbar-width", "scrollbar-color"] }],
+    "typescript-config/strict": "off",
+    "typescript-config/consistent-casing": "off",
+    "detect-css-reflows/paint": "off",
+    "detect-css-reflows/composite": "off"
+  },
+  "browserslist": ["last 2 Chrome versions", "last 2 Firefox versions", "last 2 Safari versions", "last 2 Edge versions"]
+}
