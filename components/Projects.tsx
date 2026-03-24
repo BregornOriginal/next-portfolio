@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Project } from '../typings';
 import { urlFor } from '../sanity';
-import Link from 'next/link';
+import { GlobeAltIcon } from '@heroicons/react/24/outline';
 
 type Props = {
 	projects: Project[];
@@ -92,22 +92,20 @@ const Projects = ({ projects }: Props) => {
           items-center justify-center p-20 md:p-44 h-screen"
 						key={i}
 					>
-						<Link href={project?.linkToBuild} target="_blank">
-							<motion.img
-								initial={{
-									y: -300,
-									opacity: 0,
-								}}
-								className="max-h-80 object-contain"
-								transition={{ duration: 1.2 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								src={urlFor(project?.image).url()}
-								alt=""
-								width={666}
-								height={375}
-							/>
-						</Link>
+						<motion.img
+							initial={{
+								y: -300,
+								opacity: 0,
+							}}
+							className="max-h-80 object-contain"
+							transition={{ duration: 1.2 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							src={urlFor(project?.image).url()}
+							alt=""
+							width={666}
+							height={375}
+						/>
 						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
 							<h4 className="text-xl font-semibold text-center">
 								<span>
@@ -115,6 +113,37 @@ const Projects = ({ projects }: Props) => {
 								</span>{' '}
 								{project?.title}
 							</h4>
+							<div className="flex items-center justify-center space-x-4">
+								{project?.linkToBuild && (
+									<a
+										href={project.linkToBuild}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="rounded-full border border-[#f7ab0a]/70 p-2 text-[#f7ab0a] transition hover:bg-[#f7ab0a]/20"
+										aria-label={`Open ${project.title} website`}
+									>
+										<GlobeAltIcon className="h-6 w-6" />
+									</a>
+								)}
+								{project?.linkToGithub && (
+									<a
+										href={project.linkToGithub}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="rounded-full border border-[#f7ab0a]/70 p-2 text-[#f7ab0a] transition hover:bg-[#f7ab0a]/20"
+										aria-label={`Open ${project.title} GitHub repository`}
+									>
+										<svg
+											className="h-6 w-6"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											aria-hidden="true"
+										>
+											<path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.25.79-.56v-2.17c-3.2.7-3.88-1.55-3.88-1.55-.53-1.34-1.3-1.7-1.3-1.7-1.07-.73.08-.72.08-.72 1.18.08 1.8 1.22 1.8 1.22 1.06 1.8 2.77 1.28 3.44.98.1-.77.41-1.28.74-1.58-2.55-.3-5.23-1.29-5.23-5.72 0-1.26.45-2.3 1.2-3.1-.12-.3-.52-1.51.12-3.14 0 0 .97-.31 3.18 1.19a10.93 10.93 0 0 1 5.8 0c2.2-1.5 3.17-1.2 3.17-1.2.65 1.64.25 2.85.12 3.15.75.8 1.2 1.84 1.2 3.1 0 4.44-2.7 5.42-5.27 5.71.42.37.8 1.1.8 2.22v3.3c0 .31.21.67.8.55A11.54 11.54 0 0 0 23.5 12C23.5 5.66 18.35.5 12 .5Z" />
+										</svg>
+									</a>
+								)}
+							</div>
 							<div className="flex items-center space-x-2 justify-center">
 								{project?.technologies.map((technology) => (
 									<Image

@@ -57,6 +57,7 @@ export interface Project extends SanityBody {
 	_type: 'project';
 	image: Image;
 	linkToBuild: string;
+	linkToGithub?: string;
 	technologies: Technology[];
 	summary: string;
 }
