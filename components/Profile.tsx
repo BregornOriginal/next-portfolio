@@ -13,8 +13,8 @@ export default function Profile({ pageInfo }: Props) {
 	const [text, count] = useTypewriter({
 		words: [
 			`Hi, My name is ${pageInfo?.name}`,
-			"A gamer and PC's enthusiast",
-			'[{ Love to write code! }]',
+			"Full Stack Developer — Rails & React",
+			"Building scalable applications for real-world problems",
 		],
 		loop: true,
 		delaySpeed: 2000,
