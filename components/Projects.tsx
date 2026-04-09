@@ -92,7 +92,7 @@ const Projects = ({ projects }: Props) => {
           items-center justify-center p-20 md:p-44 h-screen"
 						key={i}
 					>
-						<motion.img
+						<motion.div
 							initial={{
 								y: -300,
 								opacity: 0,
@@ -101,11 +101,16 @@ const Projects = ({ projects }: Props) => {
 							transition={{ duration: 1.2 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							src={urlFor(project?.image).url()}
-							alt=""
-							width={666}
-							height={375}
-						/>
+						>
+							<Image
+								src={urlFor(project?.image).width(800).height(400).fit('max').auto('format').quality(70).url()}
+								alt={project?.title ? `${project.title} preview` : 'Project preview'}
+								width={666}
+								height={375}
+								sizes="(max-width: 640px) 280px, (max-width: 1024px) 420px, 666px"
+								className="max-h-80 object-contain"
+							/>
+						</motion.div>
 						<div className="space-y-10 px-0 md:px-10 max-w-6xl">
 							<h4 className="text-xl font-semibold text-center">
 								<span>
@@ -149,10 +154,11 @@ const Projects = ({ projects }: Props) => {
 									<Image
 										className="h-8 w-8 sm:h-10 sm:w-10"
 										key={technology._id}
-										src={urlFor(technology.image).url()}
+										src={urlFor(technology.image).width(80).height(80).fit('crop').auto('format').quality(70).url()}
 										alt="This is an icon of a technology"
 										width={40}
 										height={40}
+										sizes="(max-width: 640px) 32px, 40px"
 									/>
 								))}
 							</div>

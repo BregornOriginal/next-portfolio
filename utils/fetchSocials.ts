@@ -1,10 +1,9 @@
+import { socialsQuery } from '../lib/queries';
+import { sanityClient } from '../sanity';
 import { Social } from '../typings';
 
 export const fetchSocial = async () => {
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`);
-
-	const data = await res.json();
-	const socials: Social[] = data.socials;
+	const socials: Social[] = await sanityClient.fetch(socialsQuery);
 
 	// console.log('fetching', socials);
 
