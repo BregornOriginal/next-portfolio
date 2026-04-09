@@ -1,8 +1,8 @@
 # Runs Lighthouse against the production build on each PR.
 #
-# Required repository secrets (Settings → Secrets and variables → Actions):
-#   NEXT_PUBLIC_SANITY_PROJECT_ID
-#   NEXT_PUBLIC_SANITY_DATASET   (optional; defaults to production in sanity.ts if unset)
+# Optional repository secrets / variables (Settings → Secrets and variables → Actions):
+#   NEXT_PUBLIC_SANITY_PROJECT_ID — overrides default in sanity.ts if you use another project
+#   NEXT_PUBLIC_SANITY_DATASET   — optional; defaults to production
 #
 # Optional:
 #   LHCI_GITHUB_APP_TOKEN — enables richer GitHub integration for Lighthouse CI
@@ -39,8 +39,9 @@ jobs:
       - name: Build Next.js
         run: npm run build
         env:
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
+          # Secret/vars optional: sanity.ts falls back to project id from sanity-portfolio/sanity.json
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID || vars.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET || vars.NEXT_PUBLIC_SANITY_DATASET || 'production' }}
 
       - name: Run Lighthouse CI
         run: npx --yes @lhci/cli@0.14.0 autorun
