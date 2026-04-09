@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { urlFor } from '../sanity';
@@ -19,6 +20,10 @@ export default function Profile({ pageInfo }: Props) {
 		loop: true,
 		delaySpeed: 2000,
 	});
+	const hasProfileImageRef = Boolean(pageInfo?.profileImage?.asset?._ref);
+	const profileImageSrc = hasProfileImageRef
+		? urlFor(pageInfo.profileImage).width(400).height(400).fit('crop').auto('format').quality(75).url()
+		: null;
 
 	return (
 		<div
@@ -27,15 +32,19 @@ export default function Profile({ pageInfo }: Props) {
 		>
 			<BackgroundCircles />
 			<div className="relative group">
-				<picture>
-					<img
+				{profileImageSrc ? (
+					<Image
 						className="relative rounded-full h-40 w-40 mx-auto object-cover transition duration-300 group-hover:blur-sm group-hover:brightness-75"
-						src={urlFor(pageInfo?.profileImage).url()}
-						alt=""
-						width={500}
-						height={500}
+						src={profileImageSrc}
+						alt={pageInfo?.name ? `${pageInfo.name} profile photo` : 'Profile photo'}
+						width={160}
+						height={160}
+						sizes="160px"
+						priority
 					/>
-				</picture>
+				) : (
+					<div className="relative rounded-full h-40 w-40 mx-auto bg-gray-700/60" aria-hidden />
+				)}
 				<button
 					type="button"
 					onClick={() => {
