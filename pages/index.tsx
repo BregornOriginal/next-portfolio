@@ -24,6 +24,35 @@ type Props = {
 	socials: Social[];
 };
 
+const fallbackPageInfo: PageInfo = {
+	_createdAt: '',
+	_id: 'fallback-page-info',
+	_rev: '',
+	_updatedAt: '',
+	_type: 'pageInfo',
+	address: '',
+	backgroundInformation: '',
+	email: '',
+	role: '',
+	profileImage: {
+		_type: 'image',
+		asset: {
+			_ref: '',
+			_type: 'reference',
+		},
+	},
+	name: '',
+	phoneNumber: '',
+	profilePic: {
+		_type: 'image',
+		asset: {
+			_ref: '',
+			_type: 'reference',
+		},
+	},
+	phrases: [],
+};
+
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 	return (
 		<div
@@ -59,7 +88,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 			<section id="contact" className='pt-10'>
 				<Contact name={''} email={''} subject={''} message={''} />
 			</section>
-			
+
 			<Footer />
 
 			<AIChatWidget
@@ -75,11 +104,19 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-	const pageInfo: PageInfo = await fetchPageInfo();
-	const experiences: Experience[] = await fetchExperiences();
-	const skills: Skill[] = await fetchSkills();
-	const projects: Project[] = await fetchProjects();
-	const socials: Social[] = await fetchSocial();
+	const [pageInfoResult, experiencesResult, skillsResult, projectsResult, socialsResult] = await Promise.allSettled([
+		fetchPageInfo(),
+		fetchExperiences(),
+		fetchSkills(),
+		fetchProjects(),
+		fetchSocial(),
+	]);
+
+	const pageInfo: PageInfo = pageInfoResult.status === 'fulfilled' ? pageInfoResult.value : fallbackPageInfo;
+	const experiences: Experience[] = experiencesResult.status === 'fulfilled' ? experiencesResult.value : [];
+	const skills: Skill[] = skillsResult.status === 'fulfilled' ? skillsResult.value : [];
+	const projects: Project[] = projectsResult.status === 'fulfilled' ? projectsResult.value : [];
+	const socials: Social[] = socialsResult.status === 'fulfilled' ? socialsResult.value : [];
 
 	return {
 		props: {
