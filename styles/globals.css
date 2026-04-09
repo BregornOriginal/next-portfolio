@@ -26,6 +26,10 @@
     box-shadow: 0 6px 18px rgba(247, 171, 10, 0.12);
   }
 
+  .headerButton:hover .social-svg-icon {
+    fill: #F7AB0A !important;
+  }
+
   .headerTextButton {
     @apply uppercase hidden md:inline-flex text-sm text-gray-400 transition-colors duration-150;
   }
